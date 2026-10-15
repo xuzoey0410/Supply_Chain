@@ -1,0 +1,22 @@
+# Direct dependency versions used in local verification (Python 3.13.11).
+# This is not a complete transitive lockfile.
+streamlit==1.65.0
+pandas==3.0.6
+numpy==2.5.3
+plotly==7.1.0
+openpyxl==3.1.5
+scipy==1.18.1
+openai==3.19.2
+python-dotenv==1.2.3
+pypdf==6.19.0
+python-docx==1.2.0
+xlrd==2.0.2
+Pillow==12.3.0
+langgraph==1.2.12
+langgraph-checkpoint-sqlite==3.1.1
+fastapi==0.142.2
+uvicorn==0.54.0
+httpx==0.28.1
+python-multipart==0.0.32
+pydantic==2.13.5
+filelock==3.32.7

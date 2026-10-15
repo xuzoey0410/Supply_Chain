@@ -1,0 +1,149 @@
+{
+  "source": "demo_data.py",
+  "dataset_id": "a1c26f7cb2426a331b7c4385e5b2926b2223da4ad785deb63a62ea59fc0d4cf2",
+  "method": "heuristic_schedule",
+  "notice": "Synthetic computed illustration; not a UI screenshot.",
+  "scenarios": [
+    {
+      "label": "Baseline",
+      "tester": 8.0,
+      "demand_multiplier": 1.0,
+      "kpi": {
+        "Scenario": "演示 · 基准产能",
+        "Type": "Custom",
+        "Hard Shortage Rows": 0,
+        "Hard Shortage Weeks": 0,
+        "Hard Shortage Tester": 0.0,
+        "Hard Shortage Wafer": 0.0,
+        "Raw Tester Over Weeks": 1,
+        "Plan Tester Over Weeks": 0,
+        "Max Prebuild Weeks": 1,
+        "Min Reach Violations": 2,
+        "Total Wafer Start": 3719.6
+      },
+      "risk": {
+        "affected_reach_products": 2,
+        "reach_records": 2,
+        "first_reach_week": "2027-CW09",
+        "reach_by_product": [
+          {
+            "product": "ORBIT-C",
+            "records": 1,
+            "first_week": "2027-CW09",
+            "worst_week": "2027-CW09",
+            "worst_reach_gap": 0.4722222222222223,
+            "actual_reach": 1.5277777777777777,
+            "minimum_reach": 2.0
+          },
+          {
+            "product": "NOVA-B",
+            "records": 1,
+            "first_week": "2027-CW09",
+            "worst_week": "2027-CW09",
+            "worst_reach_gap": 0.23529411764705888,
+            "actual_reach": 1.7647058823529411,
+            "minimum_reach": 2.0
+          }
+        ],
+        "products_omitted": 0,
+        "hard_shortage_records": 0,
+        "hard_shortage_products": [],
+        "note": "Reach风险按产品/周统计；硬性任务包含需求覆盖和最低库存，不等同于确认的未交付订单。"
+      }
+    },
+    {
+      "label": "Capacity -25%",
+      "tester": 6.0,
+      "demand_multiplier": 1.0,
+      "kpi": {
+        "Scenario": "演示 · 产能减少25%",
+        "Type": "Custom",
+        "Hard Shortage Rows": 0,
+        "Hard Shortage Weeks": 0,
+        "Hard Shortage Tester": 0.0,
+        "Hard Shortage Wafer": 0.0,
+        "Raw Tester Over Weeks": 18,
+        "Plan Tester Over Weeks": 0,
+        "Max Prebuild Weeks": 22,
+        "Min Reach Violations": 1,
+        "Total Wafer Start": 3719.459775641
+      },
+      "risk": {
+        "affected_reach_products": 1,
+        "reach_records": 1,
+        "first_reach_week": "2027-CW09",
+        "reach_by_product": [
+          {
+            "product": "ORBIT-C",
+            "records": 1,
+            "first_week": "2027-CW09",
+            "worst_week": "2027-CW09",
+            "worst_reach_gap": 0.4722222222222223,
+            "actual_reach": 1.5277777777777777,
+            "minimum_reach": 2.0
+          }
+        ],
+        "products_omitted": 0,
+        "hard_shortage_records": 0,
+        "hard_shortage_products": [],
+        "note": "Reach风险按产品/周统计；硬性任务包含需求覆盖和最低库存，不等同于确认的未交付订单。"
+      }
+    },
+    {
+      "label": "Demand +20%",
+      "tester": 8.0,
+      "demand_multiplier": 1.2,
+      "kpi": {
+        "Scenario": "演示 · 需求增加20%",
+        "Type": "Custom",
+        "Hard Shortage Rows": 0,
+        "Hard Shortage Weeks": 0,
+        "Hard Shortage Tester": 0.0,
+        "Hard Shortage Wafer": 0.0,
+        "Raw Tester Over Weeks": 9,
+        "Plan Tester Over Weeks": 0,
+        "Max Prebuild Weeks": 13,
+        "Min Reach Violations": 4,
+        "Total Wafer Start": 4495.5508928571
+      },
+      "risk": {
+        "affected_reach_products": 3,
+        "reach_records": 4,
+        "first_reach_week": "2027-CW08",
+        "reach_by_product": [
+          {
+            "product": "ORBIT-C",
+            "records": 2,
+            "first_week": "2027-CW08",
+            "worst_week": "2027-CW09",
+            "worst_reach_gap": 0.7268518518518519,
+            "actual_reach": 1.2731481481481481,
+            "minimum_reach": 2.0
+          },
+          {
+            "product": "ATLAS-A",
+            "records": 1,
+            "first_week": "2027-CW08",
+            "worst_week": "2027-CW08",
+            "worst_reach_gap": 0.14814814814814814,
+            "actual_reach": 1.8518518518518519,
+            "minimum_reach": 2.0
+          },
+          {
+            "product": "NOVA-B",
+            "records": 1,
+            "first_week": "2027-CW08",
+            "worst_week": "2027-CW08",
+            "worst_reach_gap": 0.03921568627450989,
+            "actual_reach": 1.9607843137254901,
+            "minimum_reach": 2.0
+          }
+        ],
+        "products_omitted": 0,
+        "hard_shortage_records": 0,
+        "hard_shortage_products": [],
+        "note": "Reach风险按产品/周统计；硬性任务包含需求覆盖和最低库存，不等同于确认的未交付订单。"
+      }
+    }
+  ]
+}

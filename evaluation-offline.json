@@ -1,0 +1,184 @@
+{
+  "mode": "offline_state_transitions",
+  "model": null,
+  "prompt_version": "2026-10-15-briefing.1",
+  "cases": [
+    {
+      "id": "inherit_demand",
+      "passed": true,
+      "expected": {
+        "tester_number": 17,
+        "demand_multiplier": 1.2
+      },
+      "actual": {
+        "tester_number": 17,
+        "demand_multiplier": 1.2,
+        "product_min": null,
+        "product_target": null
+      },
+      "scenario_count": 2,
+      "validation_passed": [],
+      "seconds": 0.088,
+      "tokens": 0,
+      "error_type": null,
+      "answers": [],
+      "execution_contract": null,
+      "tools_used": []
+    },
+    {
+      "id": "reset_baseline",
+      "passed": true,
+      "expected": {
+        "tester_number": 19,
+        "demand_multiplier": 1.0
+      },
+      "actual": {
+        "tester_number": 19.0,
+        "demand_multiplier": 1.0,
+        "product_min": null,
+        "product_target": null
+      },
+      "scenario_count": 2,
+      "validation_passed": [],
+      "seconds": 0.08,
+      "tokens": 0,
+      "error_type": null,
+      "answers": [],
+      "execution_contract": null,
+      "tools_used": []
+    },
+    {
+      "id": "product_patch",
+      "passed": true,
+      "expected": {
+        "tester_number": 17,
+        "demand_multiplier": 1.0,
+        "product_min": 2,
+        "product_target": 4
+      },
+      "actual": {
+        "tester_number": 17,
+        "demand_multiplier": 1.0,
+        "product_min": 2.0,
+        "product_target": 4.0
+      },
+      "scenario_count": 2,
+      "validation_passed": [],
+      "seconds": 0.061,
+      "tokens": 0,
+      "error_type": null,
+      "answers": [],
+      "execution_contract": null,
+      "tools_used": []
+    },
+    {
+      "id": "general_question",
+      "passed": true,
+      "expected": {
+        "tester_number": 19,
+        "demand_multiplier": 1.0
+      },
+      "actual": {
+        "tester_number": 19.0,
+        "demand_multiplier": 1.0
+      },
+      "scenario_count": 0,
+      "validation_passed": [],
+      "seconds": 0.0,
+      "tokens": 0,
+      "error_type": null,
+      "answers": [],
+      "execution_contract": null,
+      "tools_used": []
+    },
+    {
+      "id": "unmodeled_constraint",
+      "passed": true,
+      "expected": {
+        "tester_number": 19,
+        "demand_multiplier": 1.0
+      },
+      "actual": {
+        "tester_number": 19.0,
+        "demand_multiplier": 1.0
+      },
+      "scenario_count": 0,
+      "validation_passed": [],
+      "seconds": 0.0,
+      "tokens": 0,
+      "error_type": null,
+      "answers": [],
+      "execution_contract": null,
+      "tools_used": []
+    },
+    {
+      "id": "comparable_review",
+      "passed": true,
+      "expected": {
+        "tester_number": 17,
+        "demand_multiplier": 1.0
+      },
+      "actual": {
+        "tester_number": 17,
+        "demand_multiplier": 1.0,
+        "product_min": null,
+        "product_target": null
+      },
+      "scenario_count": 2,
+      "validation_passed": [],
+      "seconds": 0.059,
+      "tokens": 0,
+      "error_type": null,
+      "answers": [],
+      "execution_contract": null,
+      "tools_used": []
+    },
+    {
+      "id": "incomparable_review",
+      "passed": true,
+      "expected": {
+        "tester_number": 19,
+        "demand_multiplier": 1.2
+      },
+      "actual": {
+        "tester_number": 19.0,
+        "demand_multiplier": 1.2,
+        "product_min": null,
+        "product_target": null
+      },
+      "scenario_count": 2,
+      "validation_passed": [],
+      "seconds": 0.059,
+      "tokens": 0,
+      "error_type": null,
+      "answers": [],
+      "execution_contract": null,
+      "tools_used": []
+    },
+    {
+      "id": "risk_briefing",
+      "passed": true,
+      "expected": {
+        "tester_number": 19,
+        "demand_multiplier": 1.0
+      },
+      "actual": {
+        "tester_number": 19.0,
+        "demand_multiplier": 1.0,
+        "product_min": null,
+        "product_target": null
+      },
+      "scenario_count": 1,
+      "validation_passed": [],
+      "seconds": 0.029,
+      "tokens": 0,
+      "error_type": null,
+      "answers": [],
+      "execution_contract": null,
+      "tools_used": []
+    }
+  ],
+  "passed": 8,
+  "total": 8,
+  "scope": "参数理解/继承/恢复基准/结构化证据校验；不评估所有自由文本准确性。离线模式不评估模型。"
+}

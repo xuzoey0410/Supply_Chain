@@ -1,0 +1,330 @@
+{
+  "mode": "live_model",
+  "model": "gpt-4.1",
+  "prompt_version": "2026-10-15-briefing.1",
+  "cases": [
+    {
+      "id": "inherit_demand",
+      "passed": true,
+      "expected": {
+        "tester_number": 17,
+        "demand_multiplier": 1.2
+      },
+      "actual": {
+        "tester_number": 17,
+        "demand_multiplier": 1.2,
+        "product_min": null,
+        "product_target": null
+      },
+      "scenario_count": 2,
+      "validation_passed": [
+        true,
+        true
+      ],
+      "seconds": 11.482,
+      "tokens": 11550,
+      "error_type": null,
+      "answers": [
+        "已基于最初输入（baseline），仅将需求上调20%、其余参数保持不变，计算完成该方案。结果显示，在满足分配产能、测试资源等约束下，无生产周出现硬性缺货（即不会有周需求未被供应覆盖），但是连续4周产品库存覆盖率（reach）低于预设下限，显示对安全库存目标的约束有一定压力。具体的超限和达标情况如下：\n- 硬性缺货周数为0，计划测试产能充足。\n- 有4周未达到最小reach水平，均为DEMO产品后段窗口。\n\n下一步建议：可进一步分析每一周的库存详情，或根据业务优先级评估是否需要调整安全库存下限等参数。\n\n已校验的方案指标：\n\n- [S01d1260b] 硬性任务缺口记录：0\n- [S01d1260b] 缺口周数：0\n- [S01d1260b] 缺口晶圆：0\n- [S01d1260b] 超产能周数：0\n- [S01d1260b] 最大提前投片周数：0\n- [S01d1260b] 最低Reach违反记录：4\n- [S01d1260b] 投片总量：23",
+        "已在上一方案的基础上，将tester数量调整为17台，其余参数保持不变重新计算。结果显示：\n- 依然没有出现硬性缺货周或欠料情况，供应覆盖所有需求周。\n- 最低reach水平依然有4周未达标，均为DEMO产品，说明tester数量17台对当前产出满足能力无明显约束压力。\n- 投片总量、风险分布和第一版需求提升20%的结果一致。\n\n可见：tester从更多缩减到17台，产能仍满足业务需求，主要风险仍集中在期末库存覆盖（reach）低于目标，后续可针对库存达标做更细致的计划调整或策略优化。\n\n已校验的方案指标：\n\n- [S34ccc674] 硬性任务缺口记录：0\n- [S34ccc674] 缺口周数：0\n- [S34ccc674] 缺口晶圆：0\n- [S34ccc674] 超产能周数：0\n- [S34ccc674] 最大提前投片周数：0\n- [S34ccc674] 最低Reach违反记录：4\n- [S34ccc674] 投片总量：23"
+      ],
+      "execution_contract": {
+        "prompt_version": "2026-10-15-briefing.1",
+        "prompt_sha256": "7b61f295ebd53b669243360f4e7f3218728f3fbac4fc2b0ddefa156345f377cd",
+        "tool_contract_sha256": "04025d209259d88f33969666be53ac4357f269abc20bdea5a17230dae4c61249",
+        "budget": {
+          "max_rounds": 6,
+          "max_tools": 8,
+          "max_tokens": 90000,
+          "context_chars": 32000,
+          "history_turns": 8
+        }
+      },
+      "tools_used": [
+        "run_scenario",
+        "run_scenario"
+      ]
+    },
+    {
+      "id": "reset_baseline",
+      "passed": true,
+      "expected": {
+        "tester_number": 19,
+        "demand_multiplier": 1.0
+      },
+      "actual": {
+        "tester_number": 19.0,
+        "demand_multiplier": 1.0,
+        "product_min": null,
+        "product_target": null
+      },
+      "scenario_count": 2,
+      "validation_passed": [
+        true,
+        true
+      ],
+      "seconds": 9.114,
+      "tokens": 11225,
+      "error_type": null,
+      "answers": [
+        "本次按“需求增加20%、tester改为17台”已完成计算。当前无产能/测试瓶颈及缺货周，但期末库存覆盖率（reach）不达标，达4次违反，均发生于2027-CW19至2027-CW22，未能满足min reach=3.0的设定。此外，方案通过了软件校验，各约束无异常，但并未完全满足服务目标。建议如需确保全部产品/周达标，可进一步调整需求、补充库存或松动reach目标。\n\n已校验的方案指标：\n\n- [Sb4bd4b0a] 硬性任务缺口记录：0\n- [Sb4bd4b0a] 缺口周数：0\n- [Sb4bd4b0a] 缺口晶圆：0\n- [Sb4bd4b0a] 超产能周数：0\n- [Sb4bd4b0a] 最大提前投片周数：0\n- [Sb4bd4b0a] 最低Reach违反记录：4\n- [Sb4bd4b0a] 投片总量：23",
+        "基准方案已经按最初输入和全部默认假设（19台tester，扩充前原始需求、产品参数等）重新计算完成。主要发现如下：\n\n- 无产能、测试瓶颈和缺货周，硬性欠单均为0。\n- 期末库存覆盖（reach）仍有4次不达标（2027-CW19至2027-CW22），未能完全满足min reach=3.0的设定。\n- 通过了全部软件校验，约束无异常，但服务目标（所有周满足最低reach）有小幅未达。\n\n如需实现全部周最低库存目标，建议酌情调整需求、初始库存或库存策略。\n\n如需方案详细对比、或进一步优化，请说明目标。\n\n已校验的方案指标：\n\n- [S424424a2] 硬性任务缺口记录：0\n- [S424424a2] 缺口周数：0\n- [S424424a2] 缺口晶圆：0\n- [S424424a2] 超产能周数：0\n- [S424424a2] 最大提前投片周数：0\n- [S424424a2] 最低Reach违反记录：4\n- [S424424a2] 投片总量：19"
+      ],
+      "execution_contract": {
+        "prompt_version": "2026-10-15-briefing.1",
+        "prompt_sha256": "7b61f295ebd53b669243360f4e7f3218728f3fbac4fc2b0ddefa156345f377cd",
+        "tool_contract_sha256": "04025d209259d88f33969666be53ac4357f269abc20bdea5a17230dae4c61249",
+        "budget": {
+          "max_rounds": 6,
+          "max_tools": 8,
+          "max_tokens": 90000,
+          "context_chars": 32000,
+          "history_turns": 8
+        }
+      },
+      "tools_used": [
+        "run_scenario",
+        "run_scenario"
+      ]
+    },
+    {
+      "id": "product_patch",
+      "passed": true,
+      "expected": {
+        "tester_number": 17,
+        "demand_multiplier": 1.0,
+        "product_min": 2,
+        "product_target": 4
+      },
+      "actual": {
+        "tester_number": 17,
+        "demand_multiplier": 1.0,
+        "product_min": 2.0,
+        "product_target": 4.0
+      },
+      "scenario_count": 2,
+      "validation_passed": [
+        true,
+        true
+      ],
+      "seconds": 10.03,
+      "tokens": 10807,
+      "error_type": null,
+      "answers": [
+        "已完成对于产品DEMO最低Reach设为2、目标Reach设为4的方案计算。结果显示：该设置下虽然无硬性缺货或产能违规，但出现了3次最低Reach违反（分别在2027-CW20、CW21、CW22，库存水平低于2）。总投片量为19片。后续可根据风险细节决定是否进一步优化低库存区段，或调整需求/约束。\n\n已校验的方案指标：\n\n- [S90a8e2e6] 硬性任务缺口记录：0\n- [S90a8e2e6] 缺口周数：0\n- [S90a8e2e6] 缺口晶圆：0\n- [S90a8e2e6] 超产能周数：0\n- [S90a8e2e6] 最大提前投片周数：0\n- [S90a8e2e6] 最低Reach违反记录：3\n- [S90a8e2e6] 投片总量：19",
+        "将tester台数减至17台后，产品DEMO的最低Reach（2）和目标Reach（4）设置保持，与上一方案一致。计算结果显示主要指标无明显变化：方案无硬性缺货和产能违规，但依然出现3次最低Reach违反（在2027-CW20、CW21、CW22）。总投片也维持在19片。\n\n说明本轮减配tester并未带来额外风险或变化。若需要进一步降低风险，可考虑优化投片排布或调整需求。\n\n已校验的方案指标：\n\n- [S70dda923] 硬性任务缺口记录：0\n- [S70dda923] 缺口周数：0\n- [S70dda923] 缺口晶圆：0\n- [S70dda923] 超产能周数：0\n- [S70dda923] 最大提前投片周数：0\n- [S70dda923] 最低Reach违反记录：3\n- [S70dda923] 投片总量：19"
+      ],
+      "execution_contract": {
+        "prompt_version": "2026-10-15-briefing.1",
+        "prompt_sha256": "7b61f295ebd53b669243360f4e7f3218728f3fbac4fc2b0ddefa156345f377cd",
+        "tool_contract_sha256": "04025d209259d88f33969666be53ac4357f269abc20bdea5a17230dae4c61249",
+        "budget": {
+          "max_rounds": 6,
+          "max_tools": 8,
+          "max_tokens": 90000,
+          "context_chars": 32000,
+          "history_turns": 8
+        }
+      },
+      "tools_used": [
+        "run_scenario",
+        "run_scenario"
+      ]
+    },
+    {
+      "id": "general_question",
+      "passed": true,
+      "expected": {
+        "tester_number": 19,
+        "demand_multiplier": 1.0
+      },
+      "actual": {
+        "tester_number": 19.0,
+        "demand_multiplier": 1.0
+      },
+      "scenario_count": 0,
+      "validation_passed": [
+        true
+      ],
+      "seconds": 1.389,
+      "tokens": 1438,
+      "error_type": null,
+      "answers": [
+        "我可以通过分析和比较供应链生产计划方案，帮助你优化产能分配、库存水平和风险控制，并及时发现和解释潜在短缺和供应风险。"
+      ],
+      "execution_contract": {
+        "prompt_version": "2026-10-15-briefing.1",
+        "prompt_sha256": "7b61f295ebd53b669243360f4e7f3218728f3fbac4fc2b0ddefa156345f377cd",
+        "tool_contract_sha256": "04025d209259d88f33969666be53ac4357f269abc20bdea5a17230dae4c61249",
+        "budget": {
+          "max_rounds": 6,
+          "max_tools": 8,
+          "max_tokens": 90000,
+          "context_chars": 32000,
+          "history_turns": 8
+        }
+      },
+      "tools_used": []
+    },
+    {
+      "id": "unmodeled_constraint",
+      "passed": true,
+      "expected": {
+        "tester_number": 19,
+        "demand_multiplier": 1.0
+      },
+      "actual": {
+        "tester_number": 19.0,
+        "demand_multiplier": 1.0
+      },
+      "scenario_count": 0,
+      "validation_passed": [
+        true
+      ],
+      "seconds": 4.339,
+      "tokens": 1638,
+      "error_type": null,
+      "answers": [
+        "本项目目前不支持采购成本最小化与完整BOM（物料清单）约束功能。能力限制如下：\n\n1. 成本最小化：系统当前未建模任何采购价格、采购预算或总成本目标，也无法对计划排程作采购成本优化，不能输出或比较不同方案的成本表现。\n2. BOM约束：系统仅支持按产品或需求批量配置最低/目标库存覆盖（reach），没有对多级BOM结构、子件用量、材料互斥、生产用量平衡等进行约束和计算，不能处理物料间依赖关系。\n3. 资源建模：当前只覆盖库存、产能（如测试机台）、周需求等，任何与物料管理、采购预算或上下游物料消耗相关的功能均未内置。\n\n因此，若需采购成本精细化或BOM全链路物料约束，建议通过专门的供应链/物料管理系统支持。"
+      ],
+      "execution_contract": {
+        "prompt_version": "2026-10-15-briefing.1",
+        "prompt_sha256": "7b61f295ebd53b669243360f4e7f3218728f3fbac4fc2b0ddefa156345f377cd",
+        "tool_contract_sha256": "04025d209259d88f33969666be53ac4357f269abc20bdea5a17230dae4c61249",
+        "budget": {
+          "max_rounds": 6,
+          "max_tools": 8,
+          "max_tokens": 90000,
+          "context_chars": 32000,
+          "history_turns": 8
+        }
+      },
+      "tools_used": []
+    },
+    {
+      "id": "comparable_review",
+      "passed": true,
+      "expected": {
+        "tester_number": 17,
+        "demand_multiplier": 1.0
+      },
+      "actual": {
+        "tester_number": 17,
+        "demand_multiplier": 1.0,
+        "product_min": null,
+        "product_target": null
+      },
+      "scenario_count": 2,
+      "validation_passed": [
+        true
+      ],
+      "seconds": 8.676,
+      "tokens": 17007,
+      "error_type": null,
+      "answers": [
+        "两个方案（19台Tester和17台Tester）在同等需求和参数下均无硬缺口，且均有相同的Reach违反（共4次），投片总量和提前量也完全一致。即，减少Tester数量至17台时，不会带来可见的风险或计划降级。二者在本轮分析下表现等效。因此，可以考虑优先采用17台Tester的配置，但需后续结合实际产能、设备利用或其他业务约束进一步确认。\n\n已校验的方案指标：\n\n- [S2c3bec40] 缺口晶圆：0\n- [S2c3bec40] 最低Reach违反记录：4\n- [S2c3bec40] 最大提前投片周数：0\n- [S2c3bec40] 投片总量：19\n- [S490527c8] 缺口晶圆：0\n- [S490527c8] 最低Reach违反记录：4\n- [S490527c8] 最大提前投片周数：0\n- [S490527c8] 投片总量：19"
+      ],
+      "execution_contract": {
+        "prompt_version": "2026-10-15-briefing.1",
+        "prompt_sha256": "7b61f295ebd53b669243360f4e7f3218728f3fbac4fc2b0ddefa156345f377cd",
+        "tool_contract_sha256": "04025d209259d88f33969666be53ac4357f269abc20bdea5a17230dae4c61249",
+        "budget": {
+          "max_rounds": 6,
+          "max_tools": 8,
+          "max_tokens": 90000,
+          "context_chars": 32000,
+          "history_turns": 8
+        }
+      },
+      "tools_used": [
+        "run_scenario",
+        "run_scenario",
+        "assess_scenarios"
+      ]
+    },
+    {
+      "id": "incomparable_review",
+      "passed": true,
+      "expected": {
+        "tester_number": 19,
+        "demand_multiplier": 1.2
+      },
+      "actual": {
+        "tester_number": 19.0,
+        "demand_multiplier": 1.2,
+        "product_min": null,
+        "product_target": null
+      },
+      "scenario_count": 2,
+      "validation_passed": [
+        true
+      ],
+      "seconds": 9.09,
+      "tokens": 17455,
+      "error_type": null,
+      "answers": [
+        "根据核查结果，“初始需求”和“需求增加20%”两个方案由于需求基数不同，不具备直接可比性。两者的工程检查都通过，但都存在部分产品未能达到最低Reach。评审工具未对这两种不同需求情景给出优劣排序，仅指出了各自的主要不足点，用于压力测试和业务取舍，结果如下：\n\n- 两方案均无缺货晶圆（Hard Shortage Wafer=0），但存在4次最低Reach违反。\n- \"需求增加20%\"方案在投片总量（Total Wafer Start）上高于初始需求，是预期中随需求增长不可避免的变化。\n- 由于需求不同，评审未对方案作优劣推荐，只能用于分别评估不同需求压力下的表现。\n\n下一步可根据业务目标，结合方案在达成服务水平（如min reach）和资源利用（投片量）上的表现，进一步优化参数或逐项分析风险。\n\n已校验的方案指标：\n\n- [S2066c449] 缺口晶圆：0\n- [S2066c449] 最低Reach违反记录：4\n- [S2066c449] 投片总量：19\n- [Sb3fc9a1f] 缺口晶圆：0\n- [Sb3fc9a1f] 最低Reach违反记录：4\n- [Sb3fc9a1f] 投片总量：23"
+      ],
+      "execution_contract": {
+        "prompt_version": "2026-10-15-briefing.1",
+        "prompt_sha256": "7b61f295ebd53b669243360f4e7f3218728f3fbac4fc2b0ddefa156345f377cd",
+        "tool_contract_sha256": "04025d209259d88f33969666be53ac4357f269abc20bdea5a17230dae4c61249",
+        "budget": {
+          "max_rounds": 6,
+          "max_tools": 8,
+          "max_tokens": 90000,
+          "context_chars": 32000,
+          "history_turns": 8
+        }
+      },
+      "tools_used": [
+        "run_scenario",
+        "run_scenario",
+        "assess_scenarios"
+      ]
+    },
+    {
+      "id": "risk_briefing",
+      "passed": true,
+      "expected": {
+        "tester_number": 19,
+        "demand_multiplier": 1.0
+      },
+      "actual": {
+        "tester_number": 19.0,
+        "demand_multiplier": 1.0,
+        "product_min": null,
+        "product_target": null
+      },
+      "scenario_count": 1,
+      "validation_passed": [
+        true
+      ],
+      "seconds": 5.679,
+      "tokens": 9317,
+      "error_type": null,
+      "answers": [
+        "根据最初输入基准情景的排程结果，仅有1个产品（DEMO）在2027-CW19至2027-CW22连续4周出现最低Reach目标风险。其中最严重新低Reach出现在2027-CW22，实际库存覆盖比目标低2.5。没有产品出现供需未覆盖导致的硬性缺货。建议重点核查该产品的期初库存、最早投片周和供给节奏后，再针对性调整输入或反馈，以消除未来的低库存风险。\n\n已校验的方案指标：\n\n- [S43dcdd7b] 硬性任务缺口记录：0\n- [S43dcdd7b] 缺口周数：0\n- [S43dcdd7b] 最低Reach违反记录：4"
+      ],
+      "execution_contract": {
+        "prompt_version": "2026-10-15-briefing.1",
+        "prompt_sha256": "7b61f295ebd53b669243360f4e7f3218728f3fbac4fc2b0ddefa156345f377cd",
+        "tool_contract_sha256": "04025d209259d88f33969666be53ac4357f269abc20bdea5a17230dae4c61249",
+        "budget": {
+          "max_rounds": 6,
+          "max_tools": 8,
+          "max_tokens": 90000,
+          "context_chars": 32000,
+          "history_turns": 8
+        }
+      },
+      "tools_used": [
+        "run_scenario",
+        "explain_scenario"
+      ]
+    }
+  ],
+  "passed": 8,
+  "total": 8,
+  "scope": "参数理解/继承/恢复基准/结构化证据校验；不评估所有自由文本准确性。离线模式不评估模型。"
+}

@@ -1,0 +1,19 @@
+# Optional TLS gateway once a domain points to your server.
+services:
+  gateway:
+    image: caddy:2
+    environment:
+      SUPPLY_DOMAIN: ${SUPPLY_DOMAIN:?Set a domain pointing to your server}
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+    depends_on:
+      - web
+    restart: unless-stopped
+volumes:
+  caddy-data:
+  caddy-config:
